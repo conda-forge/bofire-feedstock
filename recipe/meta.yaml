@@ -1,5 +1,6 @@
 {% set name = "bofire" %}
-{% set version = "0.0.15" %}
+{% set version = "0.0.16" %}
+{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +8,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/bofire-{{ version }}.tar.gz
-  sha256: 15bf807dd78e93d694933cbf0ed4ddfa1bffd365febd45429f63b7e2ccbd1fcb
+  sha256: 4bffe990d6701b86bb71d9f04e2e253bd72fd48b7b80b6ab54693b169e730e20
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
@@ -27,7 +28,7 @@ requirements:
     - numpy
     - pandas
     - pydantic >=2.5
-    - scipy >=1.7
+    - scipy >=1.7,<1.15
     - typing-extensions
 
 test:
