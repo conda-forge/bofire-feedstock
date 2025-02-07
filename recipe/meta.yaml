@@ -1,5 +1,5 @@
 {% set name = "bofire" %}
-{% set version = "0.0.16" %}
+{% set version = "0.0.17" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/bofire-{{ version }}.tar.gz
-  sha256: 4bffe990d6701b86bb71d9f04e2e253bd72fd48b7b80b6ab54693b169e730e20
+  sha256: 71f159ed524e41dd50dbe770f83d3a7c4989e14d3ae43e20d0707075a6b20013
 
 build:
   noarch: python
@@ -23,12 +23,13 @@ requirements:
     - wheel
     - pip
   run:
+    - formulaic ==1.0.1
     - typing_extensions
     - python >={{ python_min }}
     - numpy
     - pandas
     - pydantic >=2.5
-    - scipy >=1.7,<1.15
+    - scipy >=1.7
     - typing-extensions
 
 test:
