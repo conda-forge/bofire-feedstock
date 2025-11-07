@@ -1,5 +1,5 @@
 {% set name = "bofire" %}
-{% set version = "0.2.1" %}
+{% set version = "0.2.2" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/bofire-{{ version }}.tar.gz
-  sha256: 2e22f55702cca8fbadd9cb254125cb11de7d549ca3036a2a2aff8a81251fba83
+  sha256: fe502b7baafc16601150a8349b480ffd11d7061f73250a1a542174b4c6a336a0
 
 build:
   noarch: python
