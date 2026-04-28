@@ -1,0 +1,52 @@
+schema_version: 1
+
+context:
+  name: bofire
+  version: "0.3.1"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/bofire-${{ version }}.tar.gz
+  sha256: 3182bba7d1469378f927f7ab30f14f24ee5806a1297d61650077b8a1cf56e683
+
+build:
+  number: 1
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - setuptools
+    - setuptools-scm
+    - wheel
+    - pip
+  run:
+    - formulaic ==1.0.1
+    - typing_extensions
+    - python >=${{ python_min }}
+    - numpy
+    - pandas
+    - pydantic >=2.5
+    - scipy >=1.7
+    - typing-extensions
+
+tests:
+  - python:
+      imports:
+        - bofire
+      pip_check: true
+      python_version: ${{ python_min }}
+
+about:
+  summary: Experimental design and (multi-objective) bayesian optimization.
+  license: BSD-3-Clause
+  license_file: LICENSE
+  homepage: https://github.com/experimental-design/bofire
+
+extra:
+  recipe-maintainers:
+    - jan-janssen
