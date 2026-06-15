@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: bofire
-  version: 0.4.0
+  version: "0.4.1"
   python_min: "3.11"
 
 package:
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/bofire-${{ version }}.tar.gz
-  sha256: 9a0d4b6287e9ba0f4002216b2a250011631bc1d37b924a5a518c7ee2b6f590d9
+  sha256: 57353777711d28de5c0f6665e02e10f3a4ece3d7b656c29da59b7ba186588c6d
 
 build:
   number: 0
