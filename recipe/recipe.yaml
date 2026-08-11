@@ -2,8 +2,8 @@ schema_version: 1
 
 context:
   name: bofire
-  version: "0.4.1"
-  python_min: "3.11"
+  version: 0.5.0
+  python_min: '3.11'
 
 package:
   name: ${{ name|lower }}
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/bofire-${{ version }}.tar.gz
-  sha256: 57353777711d28de5c0f6665e02e10f3a4ece3d7b656c29da59b7ba186588c6d
+  sha256: 7c7300c43cc038127c01d1900817a39a4904c178b0f6a4cae8a2c97bd2c8863e
 
 build:
   number: 0
@@ -29,8 +29,8 @@ requirements:
     - formulaic <=1.0.2
     - typing_extensions
     - python >=${{ python_min }}
-    - numpy
-    - pandas
+    - numpy <2.5.0
+    - pandas >=3.0.0
     - pydantic >=2.5
     - scipy >=1.7
 tests:
